@@ -84,6 +84,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var groupCollectionView: UICollectionView!
+    
+    @IBOutlet weak var groupCollectionViewHeight: NSLayoutConstraint!
+    
     var bankNumber: Float = 0 {
         didSet {
             self.bankNumber = self.bankNumber <= 0 ? 0 : self.bankNumber
@@ -121,7 +125,13 @@ class ViewController: UIViewController {
             print(resultList)
             self.countList()
             self.collectionView.reloadData()
-            //TODO: - layout collectionView
+            self.countThreeGroupCombinations()
+        }
+    }
+    
+    var bundleList: [Int] = [] {
+        didSet {
+            self.groupCollectionView.reloadData()
         }
     }
     
@@ -177,9 +187,38 @@ class ViewController: UIViewController {
         
     }
     
+    func countThreeGroupCombinations() {
+        let inputArray = self.resultList
+        // 定義所有可能的組合
+        let combinations = [
+            "莊莊莊", "閒閒閒", "莊莊閒", "閒閒莊",
+            "莊閒閒", "閒莊莊", "閒莊閒", "莊閒莊"
+        ]
+        
+        var combinationCounts: [String: Int] = [:]
+        for combination in combinations {
+            combinationCounts[combination] = 0
+        }
+        
+        // 遍歷 inputArray，每三個一組
+        var BArray: [Int] = []
+        
+        for i in stride(from: 0, to: inputArray.count - 2, by: 3) {
+            let group = inputArray[i] + inputArray[i+1] + inputArray[i+2]
+            
+            if let count = combinationCounts[group] {
+                let total = count + 1
+                combinationCounts[group] = total
+                BArray.append(total)
+            }
+        }
+
+        
+        self.bundleList = BArray
+    }
+
+    
     func setupCollectionView() {
-        
-        
         
         let width = UIScreen.main.bounds.size.width / CGFloat(rowCount)
         
@@ -195,10 +234,31 @@ class ViewController: UIViewController {
         
         self.collectionView.register(.init(nibName: "CustomItem", bundle: nil), forCellWithReuseIdentifier: "CustomItem")
         
+        self.collectionView.showsHorizontalScrollIndicator = false
+        
         self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
         
         self.collectionView.reloadData()
-
+        
+        let layout2 = UICollectionViewFlowLayout()
+        layout2.itemSize = CGSize(width: width, height: width)
+        layout2.minimumLineSpacing = 0
+        layout2.minimumInteritemSpacing = 0
+        layout2.scrollDirection = .horizontal
+        
+        
+        self.groupCollectionViewHeight.constant = width
+        
+        self.groupCollectionView.isScrollEnabled = false
+        self.groupCollectionView.register(.init(nibName: "CountCustomItem", bundle: nil), forCellWithReuseIdentifier: "CountCustomItem")
+        self.groupCollectionView.collectionViewLayout = layout2
+        self.groupCollectionView.dataSource = self
+        self.groupCollectionView.delegate = self
+        self.groupCollectionView.reloadData()
+        
+        
     }
     
     func setupActionStackView() {
@@ -421,17 +481,38 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomItem", for: indexPath) as? CustomItem else { return UICollectionViewCell() }
+
         
-        cell.setupView(title: self.getItem(at: indexPath))
+        
+        if collectionView == self.collectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomItem", for: indexPath) as? CustomItem else { return UICollectionViewCell() }
+            
+            cell.setupView(title: self.getItem(at: indexPath))
+            return cell
+        } else if collectionView == self.groupCollectionView {
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountCustomItem", for: indexPath) as? CountCustomItem else { return UICollectionViewCell() }
+            
+            
+            cell.setupView(title: "\(self.bundleList[safe: indexPath.item] ?? 0)")
+            return cell
+        }
     
         
         
-        return cell
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.resultList.count + 100
+        
+        if collectionView == self.collectionView {
+            return self.resultList.count + 99
+        } else if collectionView == self.groupCollectionView {
+            return self.bundleList.count + 99
+        }
+        
+        return 0
+        
     }
     
     // 根據要求重新排列數據順序
@@ -443,4 +524,16 @@ extension ViewController: UICollectionViewDataSource {
         print("row:\(row) column:\(column) newIndex: \(newIndex)")
         return self.resultList[safe: newIndex]
     }
+    
+
+}
+
+extension ViewController: UICollectionViewDelegate {
+    // 當 UICollectionView 滾動時會呼叫這個方法
+     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         let offset = scrollView.contentOffset.x
+         print("CollectionView 滾動了, x 偏移量: \(offset)")
+         self.groupCollectionView.contentOffset.x = offset
+         self.collectionView.contentOffset.x = offset
+     }
 }

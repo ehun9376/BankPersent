@@ -69,7 +69,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pCv-AN-BmP">
-                                <rect key="frame" x="0.0" y="667.33333333333337" width="393" height="20.333333333333371"/>
+                                <rect key="frame" x="0.0" y="614.66666666666663" width="393" height="20.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8o-Sg-Gwh">
                                         <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="20.333333333333332"/>
@@ -86,7 +86,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PVI-xH-zAe">
-                                <rect key="frame" x="0.0" y="627" width="393" height="20.333333333333371"/>
+                                <rect key="frame" x="0.0" y="574.33333333333337" width="393" height="20.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnM-vH-X5f">
                                         <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="20.333333333333332"/>
@@ -103,10 +103,10 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jjT-Mx-S8I">
-                                <rect key="frame" x="0.0" y="200" width="393" height="373"/>
+                                <rect key="frame" x="0.0" y="200" width="393" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="373" id="3Ii-iC-pRq"/>
+                                    <constraint firstAttribute="height" constant="200" id="3Ii-iC-pRq"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5d2-hL-Qpk">
                                     <size key="itemSize" width="128" height="128"/>
@@ -117,7 +117,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r39-ld-3bW">
-                                <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                                <rect key="frame" x="0.0" y="695.33333333333337" width="393" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1qT-yM-RDp">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
@@ -133,7 +133,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-md-kU4">
-                                <rect key="frame" x="0.0" y="707.66666666666663" width="393" height="20.333333333333371"/>
+                                <rect key="frame" x="0.0" y="655" width="393" height="20.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grc-zV-r5Y">
                                         <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="20.333333333333332"/>
@@ -150,10 +150,24 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEI-Cb-V7p">
-                                <rect key="frame" x="308" y="583" width="75" height="24"/>
+                                <rect key="frame" x="308" y="520" width="75" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ISq-ka-PfU">
+                                <rect key="frame" x="0.0" y="400" width="393" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6Kw-tB-CSf"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k2D-uX-PZD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -161,6 +175,7 @@
                             <constraint firstItem="4Yg-RD-vhw" firstAttribute="top" secondItem="RY6-1F-Gve" secondAttribute="bottom" constant="20" id="0qF-ho-FEO"/>
                             <constraint firstItem="GvJ-hd-FRH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Lj-tV-AYT"/>
                             <constraint firstItem="bHb-md-kU4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Gd-6S-kbw"/>
+                            <constraint firstItem="ISq-ka-PfU" firstAttribute="top" secondItem="jjT-Mx-S8I" secondAttribute="bottom" id="6wL-8H-56M"/>
                             <constraint firstItem="PVI-xH-zAe" firstAttribute="top" secondItem="BEI-Cb-V7p" secondAttribute="bottom" constant="20" id="8wT-m5-RfG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RY6-1F-Gve" secondAttribute="trailing" id="Edz-dS-gz3"/>
                             <constraint firstItem="r39-ld-3bW" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Eh4-40-MMw"/>
@@ -168,12 +183,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bHb-md-kU4" secondAttribute="trailing" id="GCH-l9-wv1"/>
                             <constraint firstItem="pCv-AN-BmP" firstAttribute="top" secondItem="PVI-xH-zAe" secondAttribute="bottom" constant="20" id="HOu-F0-M6q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjT-Mx-S8I" secondAttribute="trailing" id="P8y-60-gJO"/>
+                            <constraint firstItem="ISq-ka-PfU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pe9-Cc-xYY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GvJ-hd-FRH" secondAttribute="trailing" id="Rbe-pT-ihz"/>
                             <constraint firstItem="bHb-md-kU4" firstAttribute="top" secondItem="pCv-AN-BmP" secondAttribute="bottom" constant="20" id="STL-GG-QM0"/>
                             <constraint firstItem="r39-ld-3bW" firstAttribute="top" secondItem="bHb-md-kU4" secondAttribute="bottom" constant="20" id="SYt-QA-qxG"/>
-                            <constraint firstItem="BEI-Cb-V7p" firstAttribute="top" secondItem="jjT-Mx-S8I" secondAttribute="bottom" constant="10" id="VdG-8X-yQJ"/>
                             <constraint firstItem="PVI-xH-zAe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XZk-Cp-fC8"/>
                             <constraint firstItem="4Yg-RD-vhw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZGK-uw-1xp"/>
+                            <constraint firstItem="BEI-Cb-V7p" firstAttribute="top" secondItem="ISq-ka-PfU" secondAttribute="bottom" constant="20" id="Zs7-ne-v6n"/>
                             <constraint firstItem="GvJ-hd-FRH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a47-t6-QCp"/>
                             <constraint firstItem="jjT-Mx-S8I" firstAttribute="top" secondItem="4Yg-RD-vhw" secondAttribute="bottom" constant="20" id="alS-m6-IN0"/>
                             <constraint firstItem="pCv-AN-BmP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fKP-g8-xNC"/>
@@ -183,6 +199,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PVI-xH-zAe" secondAttribute="trailing" id="qfi-LR-ePd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r39-ld-3bW" secondAttribute="trailing" id="slu-mO-Zzo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCv-AN-BmP" secondAttribute="trailing" id="tBr-Dl-exr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ISq-ka-PfU" secondAttribute="trailing" id="tJ4-P8-y14"/>
                             <constraint firstItem="RY6-1F-Gve" firstAttribute="top" secondItem="GvJ-hd-FRH" secondAttribute="bottom" constant="20" id="v3e-ic-KaF"/>
                             <constraint firstItem="jjT-Mx-S8I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wGU-Gh-jkQ"/>
                         </constraints>
@@ -197,6 +214,8 @@
                         <outlet property="customerPercentLabel" destination="q6u-sJ-23L" id="Xyr-Rq-HQV"/>
                         <outlet property="customerTitle" destination="br3-1g-3wL" id="td7-dR-MNB"/>
                         <outlet property="customerValueLabel" destination="NU2-0e-k6C" id="EcV-jb-aJ6"/>
+                        <outlet property="groupCollectionView" destination="ISq-ka-PfU" id="4cR-ad-BrQ"/>
+                        <outlet property="groupCollectionViewHeight" destination="6Kw-tB-CSf" id="ItL-vE-xbk"/>
                         <outlet property="joinPercentLabel" destination="grc-zV-r5Y" id="JZT-ES-aln"/>
                         <outlet property="joinTitle" destination="dnM-vH-X5f" id="OXM-z7-Dn9"/>
                         <outlet property="joinValueLabel" destination="b8o-Sg-Gwh" id="2tY-F6-Byl"/>
