@@ -103,10 +103,10 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jjT-Mx-S8I">
-                                <rect key="frame" x="10" y="200" width="373" height="373"/>
+                                <rect key="frame" x="0.0" y="200" width="393" height="373"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="jjT-Mx-S8I" secondAttribute="height" multiplier="1:1" id="Lqw-mG-LJt"/>
+                                    <constraint firstAttribute="height" constant="373" id="3Ii-iC-pRq"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5d2-hL-Qpk">
                                     <size key="itemSize" width="128" height="128"/>
@@ -163,11 +163,11 @@
                             <constraint firstItem="bHb-md-kU4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Gd-6S-kbw"/>
                             <constraint firstItem="PVI-xH-zAe" firstAttribute="top" secondItem="BEI-Cb-V7p" secondAttribute="bottom" constant="20" id="8wT-m5-RfG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RY6-1F-Gve" secondAttribute="trailing" id="Edz-dS-gz3"/>
-                            <constraint firstItem="r39-ld-3bW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Eh4-40-MMw"/>
+                            <constraint firstItem="r39-ld-3bW" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Eh4-40-MMw"/>
                             <constraint firstItem="RY6-1F-Gve" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FXh-SX-FXc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bHb-md-kU4" secondAttribute="trailing" id="GCH-l9-wv1"/>
                             <constraint firstItem="pCv-AN-BmP" firstAttribute="top" secondItem="PVI-xH-zAe" secondAttribute="bottom" constant="20" id="HOu-F0-M6q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjT-Mx-S8I" secondAttribute="trailing" constant="10" id="P8y-60-gJO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjT-Mx-S8I" secondAttribute="trailing" id="P8y-60-gJO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GvJ-hd-FRH" secondAttribute="trailing" id="Rbe-pT-ihz"/>
                             <constraint firstItem="bHb-md-kU4" firstAttribute="top" secondItem="pCv-AN-BmP" secondAttribute="bottom" constant="20" id="STL-GG-QM0"/>
                             <constraint firstItem="r39-ld-3bW" firstAttribute="top" secondItem="bHb-md-kU4" secondAttribute="bottom" constant="20" id="SYt-QA-qxG"/>
@@ -184,7 +184,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r39-ld-3bW" secondAttribute="trailing" id="slu-mO-Zzo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCv-AN-BmP" secondAttribute="trailing" id="tBr-Dl-exr"/>
                             <constraint firstItem="RY6-1F-Gve" firstAttribute="top" secondItem="GvJ-hd-FRH" secondAttribute="bottom" constant="20" id="v3e-ic-KaF"/>
-                            <constraint firstItem="jjT-Mx-S8I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wGU-Gh-jkQ"/>
+                            <constraint firstItem="jjT-Mx-S8I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wGU-Gh-jkQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -193,6 +193,7 @@
                         <outlet property="bankTitle" destination="ce9-cZ-3lT" id="KeZ-mQ-LaU"/>
                         <outlet property="bankValueLabel" destination="LBY-Wg-leB" id="Q4q-rf-nab"/>
                         <outlet property="collectionView" destination="jjT-Mx-S8I" id="mPF-uG-dUq"/>
+                        <outlet property="collectionViewHeight" destination="3Ii-iC-pRq" id="lKC-XH-7TW"/>
                         <outlet property="customerPercentLabel" destination="q6u-sJ-23L" id="Xyr-Rq-HQV"/>
                         <outlet property="customerTitle" destination="br3-1g-3wL" id="td7-dR-MNB"/>
                         <outlet property="customerValueLabel" destination="NU2-0e-k6C" id="EcV-jb-aJ6"/>

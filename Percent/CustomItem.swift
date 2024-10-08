@@ -17,7 +17,7 @@ class CustomItem: UICollectionViewCell {
         
         self.titleLabel.textColor = .white
         self.titleLabel.textAlignment = .center
-        self.titleLabel.font = .systemFont(ofSize: 18)
+        self.titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         self.titleLabel.adjustsFontSizeToFitWidth = true
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1

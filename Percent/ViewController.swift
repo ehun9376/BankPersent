@@ -82,6 +82,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     var bankNumber: Float = 0 {
         didSet {
@@ -123,6 +124,10 @@ class ViewController: UIViewController {
             //TODO: - layout collectionView
         }
     }
+    
+    var rowCount = 8
+    
+    var columnCount = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -174,13 +179,20 @@ class ViewController: UIViewController {
     
     func setupCollectionView() {
         
+        
+        
+        let width = UIScreen.main.bounds.size.width / CGFloat(rowCount)
+        
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.collectionView.frame.height / 6, height: self.collectionView.frame.height / 3)
+        layout.itemSize = CGSize(width: width, height: width)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         
+        self.collectionViewHeight.constant = width * CGFloat(columnCount)
+        
         self.collectionView.collectionViewLayout = layout
+        
         self.collectionView.register(.init(nibName: "CustomItem", bundle: nil), forCellWithReuseIdentifier: "CustomItem")
         
         self.collectionView.dataSource = self
@@ -424,9 +436,9 @@ extension ViewController: UICollectionViewDataSource {
     
     // 根據要求重新排列數據順序
     func getItem(at indexPath: IndexPath) -> String? {
-        let row = indexPath.item / 6 // 計算行（橫軸）
-        let column = indexPath.item % 6 // 計算列（縱軸）
-        let newIndex = row * 6 + column // 按照自定義規則重新排列數據
+        let row = indexPath.item / rowCount // 計算行（橫軸）
+        let column = indexPath.item % rowCount // 計算列（縱軸）
+        let newIndex = row * rowCount + column // 按照自定義規則重新排列數據
         
         print("row:\(row) column:\(column) newIndex: \(newIndex)")
         return self.resultList[safe: newIndex]
