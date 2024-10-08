@@ -175,7 +175,7 @@ class ViewController: UIViewController {
     func setupCollectionView() {
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.collectionView.frame.height / 4, height: self.collectionView.frame.height / 4)
+        layout.itemSize = CGSize(width: self.collectionView.frame.height / 6, height: self.collectionView.frame.height / 3)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -261,7 +261,7 @@ class ViewController: UIViewController {
     }
     
     func setupCleanButton(_ button: UIButton) {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 6.0, *) {
             button.configuration = nil
         }
         button.setTitle(" 清除 ", for: .normal)
@@ -276,7 +276,7 @@ class ViewController: UIViewController {
         
         let button = UIButton(type: .custom)
         
-        if #available(iOS 15.0, *) {
+        if #available(iOS 6.0, *) {
             button.configuration = nil
         }
         
@@ -424,9 +424,9 @@ extension ViewController: UICollectionViewDataSource {
     
     // 根據要求重新排列數據順序
     func getItem(at indexPath: IndexPath) -> String? {
-        let row = indexPath.item / 4 // 計算行（橫軸）
-        let column = indexPath.item % 4 // 計算列（縱軸）
-        let newIndex = row * 4 + column // 按照自定義規則重新排列數據
+        let row = indexPath.item / 6 // 計算行（橫軸）
+        let column = indexPath.item % 6 // 計算列（縱軸）
+        let newIndex = row * 6 + column // 按照自定義規則重新排列數據
         
         print("row:\(row) column:\(column) newIndex: \(newIndex)")
         return self.resultList[safe: newIndex]
